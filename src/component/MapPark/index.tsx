@@ -31,7 +31,10 @@ function MapPark(props: IMapPark) {
         <Path fill="#fff" d="M4.5 0.5H1083.5V1699.5H4.5z" />
         <Path stroke="#000" d="M4.5 0.5H1083.5V1699.5H4.5z" />
         <G filter="url(#filter1_d_502_55)">
-          <Path fill={status.b2 ? 'red' : '#fff'} d="M626 295H1039V515H626z" />
+          <Path
+            fill={status.b2 ? '#f87171' : '#fff'}
+            d="M626 295H1039V515H626z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -40,7 +43,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter2_d_502_55)">
-          <Path fill="#525BAC" d="M626 43H1039V263H626z" />
+          <Path
+            fill={status.b1 ? '#f87171' : '#fff'}
+            d="M626 43H1039V263H626z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -49,7 +55,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter3_d_502_55)">
-          <Path fill="#525BAC" d="M626 547H1039V767H626z" />
+          <Path
+            fill={status.b3 ? '#f87171' : '#fff'}
+            d="M626 547H1039V767H626z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -58,7 +67,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter4_d_502_55)">
-          <Path fill="#525BAC" d="M626 799H1039V1019H626z" />
+          <Path
+            fill={status.b4 ? '#f87171' : '#fff'}
+            d="M626 799H1039V1019H626z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -67,7 +79,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter5_d_502_55)">
-          <Path fill="#525BAC" d="M626 1051H1039V1271H626z" />
+          <Path
+            fill={status.b5 ? '#f87171' : '#fff'}
+            d="M626 1051H1039V1271H626z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -76,7 +91,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter6_d_502_55)">
-          <Path fill="#525BAC" d="M629 1297H1042V1517H629z" />
+          <Path
+            fill={status.b6 ? '#f87171' : '#fff'}
+            d="M629 1297H1042V1517H629z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -163,7 +181,7 @@ function MapPark(props: IMapPark) {
           fill="#000"
         />
         <G filter="url(#filter7_d_502_55)">
-          <Path fill="#525BAC" d="M43 295H461V515H43z" />
+          <Path fill={status.a2 ? '#f87171' : '#fff'} d="M43 295H461V515H43z" />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -172,7 +190,7 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter8_d_502_55)">
-          <Path fill="#525BAC" d="M43 43H461V263H43z" />
+          <Path fill={status.a1 ? '#f87171' : '#fff'} d="M43 43H461V263H43z" />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -181,7 +199,7 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter9_d_502_55)">
-          <Path fill="#525BAC" d="M43 547H461V767H43z" />
+          <Path fill={status.a3 ? '#f87171' : '#fff'} d="M43 547H461V767H43z" />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -190,7 +208,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter10_d_502_55)">
-          <Path fill="#525BAC" d="M43 799H461V1019H43z" />
+          <Path
+            fill={status.a4 ? '#f87171' : '#fff'}
+            d="M43 799H461V1019H43z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -199,7 +220,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter11_d_502_55)">
-          <Path fill="#525BAC" d="M45 1051H463V1271H45z" />
+          <Path
+            fill={status.a5 ? '#f87171' : '#fff'}
+            d="M45 1051H463V1271H45z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}
@@ -208,7 +232,10 @@ function MapPark(props: IMapPark) {
           />
         </G>
         <G filter="url(#filter12_d_502_55)">
-          <Path fill="#525BAC" d="M47 1297H465V1517H47z" />
+          <Path
+            fill={status.a6 ? '#f87171' : '#fff'}
+            d="M47 1297H465V1517H47z"
+          />
           <Path
             stroke="#173BBB"
             strokeWidth={5}

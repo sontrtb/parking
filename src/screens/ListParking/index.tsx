@@ -93,7 +93,7 @@ function ListParking() {
               <View>
                 <Text style={styles.name}>{item.name}</Text>
                 <Text>Địa chỉ: {item.address}</Text>
-                <Text>Trạng thái: Đang sử dụng</Text>
+                <Text>Trạng thái: 5/12</Text>
               </View>
             </TouchableOpacity>
           )}

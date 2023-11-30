@@ -7,6 +7,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Modal,
+  TextInput,
 } from 'react-native';
 import MapView, {LatLng, Marker} from 'react-native-maps';
 import {Dimensions} from 'react-native';
@@ -15,11 +16,17 @@ import MapPark from '../../component/MapPark';
 
 const windowWidth = Dimensions.get('window').width;
 
+// const DATA = {
+//   b2: true,
+// };
+
 function MapCar() {
   const route = useRoute();
   const parkInit = route.params?.park as any;
 
   const [modalVisible, setModalVisible] = useState(false);
+  const [text, setText] = useState('');
+  const [dataStatus, setDataStatus] = useState({});
 
   useEffect(() => {
     const requestLocationPermission = async (): Promise<void> => {
@@ -65,7 +72,7 @@ function MapCar() {
 
       <View style={styles.svgWrap}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <MapPark width={windowWidth - 55} status={{}} />
+          <MapPark width={windowWidth - 55} status={dataStatus} />
         </ScrollView>
       </View>
 
@@ -82,17 +89,25 @@ function MapCar() {
         visible={modalVisible}
         onRequestClose={() => {
           setModalVisible(!modalVisible);
+          setText('');
         }}>
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text>Hello World!</Text>
+            <Text style={styles.titleModal}>Chọn vị trí</Text>
+            <TextInput
+              style={styles.input}
+              onChangeText={setText}
+              value={text}
+            />
             <TouchableOpacity
               style={styles.button}
               activeOpacity={0.6}
               onPress={() => {
+                setDataStatus({...dataStatus, [text.toLowerCase()]: true});
+                setText('');
                 setModalVisible(!modalVisible);
               }}>
-              <Text style={styles.textButton}>Đóng</Text>
+              <Text style={styles.textButton}>Xác nhận</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -151,6 +166,19 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
     marginTop: 22,
+  },
+  titleModal: {
+    fontSize: 18,
+    fontWeight: '800',
+    marginBottom: 20,
+  },
+  input: {
+    borderRadius: 10,
+    borderColor: '#3b82f6',
+    borderWidth: 1,
+    width: windowWidth - 32,
+    paddingHorizontal: 20,
+    backgroundColor: '#e0f2fe',
   },
 });
 

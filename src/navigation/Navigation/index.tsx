@@ -26,9 +26,21 @@ function Navigation() {
           component={Login}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen name="CarDetail" component={MapCar} />
-        <Stack.Screen name="ListParking" component={ListParking} />
+        <Stack.Screen
+          name="HomeScreen"
+          component={HomeScreen}
+          options={{title: 'Trang chủ'}}
+        />
+        <Stack.Screen
+          name="CarDetail"
+          component={MapCar}
+          options={{title: 'Chi tiết bãi đỗ'}}
+        />
+        <Stack.Screen
+          name="ListParking"
+          component={ListParking}
+          options={{title: 'Danh sách bãi đỗ'}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
