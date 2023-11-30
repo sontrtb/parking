@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   PermissionsAndroid,
   Text,
@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ScrollView,
   TouchableOpacity,
+  Modal,
 } from 'react-native';
 import MapView, {LatLng, Marker} from 'react-native-maps';
 import {Dimensions} from 'react-native';
@@ -16,8 +17,9 @@ const windowWidth = Dimensions.get('window').width;
 
 function MapCar() {
   const route = useRoute();
-
   const parkInit = route.params?.park as any;
+
+  const [modalVisible, setModalVisible] = useState(false);
 
   useEffect(() => {
     const requestLocationPermission = async (): Promise<void> => {
@@ -63,13 +65,38 @@ function MapCar() {
 
       <View style={styles.svgWrap}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <MapPark width={windowWidth - 55} />
+          <MapPark width={windowWidth - 55} status={{}} />
         </ScrollView>
       </View>
 
-      <TouchableOpacity style={styles.button} activeOpacity={0.6}>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.6}
+        onPress={() => setModalVisible(true)}>
         <Text style={styles.textButton}>Đặt chỗ</Text>
       </TouchableOpacity>
+
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}>
+        <View style={styles.centeredView}>
+          <View style={styles.modalView}>
+            <Text>Hello World!</Text>
+            <TouchableOpacity
+              style={styles.button}
+              activeOpacity={0.6}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}>
+              <Text style={styles.textButton}>Đóng</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -105,6 +132,25 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
     color: '#fff',
+  },
+  modalView: {
+    backgroundColor: '#dbeafe',
+    padding: 16,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginTop: 22,
   },
 });
 
