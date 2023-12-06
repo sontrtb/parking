@@ -15,24 +15,24 @@ import MapView, {Callout, LatLng, Marker} from 'react-native-maps';
 const DATA = [
   {
     id: 1,
-    name: 'First Item',
-    address: 'sdsd sd sd ',
-    latitude: 20.9796503,
-    longitude: 105.79309915,
+    name: 'PTIT',
+    address: 'Km10 Nguyễn Trãi, Hà Đông, Hà Nội ',
+    latitude: 20.980596,
+    longitude: 105.787549,
   },
   {
     id: 2,
-    name: 'Firsds7d6s7d6sst Item',
-    address: 'sdsd sd sd ',
-    latitude: 20.996503,
-    longitude: 105.73909915,
+    name: 'Đại học Kiến trúc',
+    address: ' P. Văn Quán, Hà Đông, Hà Nội ',
+    latitude: 20.98071,
+    longitude: 105.788859,
   },
   {
     id: 3,
-    name: 'Fidsdsdsds dsrst Item',
-    address: 'sdsd sd sd ',
-    latitude: 20.97936503,
-    longitude: 105.7909915,
+    name: 'Học viện Y Dược học Cổ truyền Việt Nam',
+    address: '2 Trần Phú, Mộ Lao, Hà Đông, Hà Nội',
+    latitude: 20.984393512533995,
+    longitude: 105.79244004612609,
   },
 ];
 
@@ -91,7 +91,9 @@ function ListParking() {
                 resizeMode="cover"
               />
               <View>
-                <Text style={styles.name}>{item.name}</Text>
+                <Text style={styles.name} numberOfLines={2}>
+                  {item.name}
+                </Text>
                 <Text>Địa chỉ: {item.address}</Text>
                 <Text>Trạng thái: 5/12</Text>
               </View>
@@ -148,6 +150,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: '700',
+    width: windowWidth - 110,
   },
   callout: {
     paddingHorizontal: 20,
